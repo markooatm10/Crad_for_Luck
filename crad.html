@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡片翻转效果</title>
+    <style>
+        /* 容器，确保卡片居中显示 */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f1af5e;
+        }
+
+        .card-container {
+            perspective: 100%;
+            
+        }
+
+        .card {
+            width: 400px;
+            height: 600px;
+            border-radius: 20px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
+            transition: transform 0.5s;
+        }
+
+        /* 翻转效果 */
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        /* 卡片正反面 */
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+        }
+
+        .front {
+            background-image: url('pic/zheng.jpg'); /* 正面图片 */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .back2 {
+            background-image: url('pic/fan.jpg'); /* 背面图片 */
+            background-size: cover;
+            background-position: center;
+            transform: rotateY(180deg);
+        }
+
+        .back1 {
+            background-image: url('pic/3pink.jpg'); /* 背面图片 */
+            background-size: cover;
+            background-position: center;
+            transform: rotateY(180deg);
+        }
+
+        .back3 {
+            background-image: url('pic/luguo.png'); /* 背面图片 */
+            background-size: cover;
+            background-position: center;
+            transform: rotateY(180deg);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div style="margin-right: 40px;">请翻转卡片   </div> -->
+<h1>♥</h1>
+<div class="card-container">
+    <div class="card">
+        <div class="card-face front"></div>
+        <div class="card-face back1"></div>
+    </div>
+</div>
+<h1>♥</h1>
+<div class="card-container">
+    <div class="card">
+        <div class="card-face front"></div>
+        <div class="card-face back2"></div>
+    </div>
+</div>
+<h1>♥</h1>
+<div class="card-container">
+    <div class="card">
+        <div class="card-face front"></div>
+        <div class="card-face back3"></div>
+    </div>
+</div>
+
+<script>
+    // 你可以在这里添加一些交互代码，或是其他的效果
+</script>
+
+</body>
+</html>
